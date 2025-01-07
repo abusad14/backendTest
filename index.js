@@ -1,8 +1,18 @@
 const express = require("express");
 const app = express();
+const { connect } = require("mongoose");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
+const MONGO_URI = process.env.MONGO_URI;
+
+connect(MONGO_URI)
+  .then(() => {
+    console.log("Mongodb adtlas connected");
+  })
+  .catch((err) => {
+    console.log("Mongodb connection error", err);
+  });
 
 app.get("/", (req, res) => {
   res.setHeader("Content-Type", "text/html"); // Explicitly set the Content-Type
