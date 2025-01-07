@@ -30,7 +30,7 @@ app.get("/about", (req, res) => {
 app.get("/data", async (req, res) => {
   try {
     // Fetch 5 comments from the 'comments' collection
-    const data = await Comments.find().limit(5);
+    const data = await Comments.find().limit(2).lean();
 
     // Create a dynamic HTML response to display the data
     let htmlContent = `
