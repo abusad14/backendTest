@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.setHeader("Content-Type", "text/html"); // Explicitly set the Content-Type
   res.send(
-    `<h1>Welcome to About page</h1><h2>This is also added on 7 January</h><a href="/">Home</a>`
+    `<h1>Welcome to About page</h1><h2>This is also added on 7 January</h><a href="/">Home</a><a href="/data">Data</a>`
   );
 });
 app.get("/data", async (req, res) => {
